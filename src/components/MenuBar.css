@@ -1,0 +1,127 @@
+.MenuBar-Container{
+    display:flex;  
+    flex-wrap: wrap;
+    gap:10px;
+    justify-content: center; 
+    align-items: center;
+    background-color: rgb(255, 241, 224);
+    border-bottom:2px solid black;
+    padding-left:4vh;
+    padding-right:4vh;
+    height:60px;
+}
+
+.MenuBar-Text{
+    margin-right: auto;
+    font-size: 30px;
+    text-decoration: none;
+    color:black;
+    transition: all 0.5s;
+}
+
+.MenuBar-Text:hover{
+    transform: scale(1.2);
+    color:rgb(134, 74, 0);
+    transition: all 5s;
+}
+
+.SearchBox-Container{
+    justify-content: center;
+}
+
+.MenuBar-SearchBox{
+    background-color: transparent;
+    text-align: center;
+    color:black;
+    border:4px solid black;
+    border-radius: 8px;
+    width: 100vh;
+    max-width: 300px;
+    height: 28px;
+    transition: all 0.4s;
+}
+
+.MenuBar-SearchButton{
+    background-color: transparent;
+    text-decoration: none;
+    padding:5px;
+    border:4px solid black;
+    margin-left: 6px;
+    border-radius: 8px;
+
+    display:inline-flex;
+    justify-content: center;
+    width:70px;
+}
+
+.MenuBar-SearchBox::placeholder{
+    color:black;
+    text-align: center;
+}
+
+.MenuBar-SearchBox:hover::placeholder{
+    color:rgb(162, 162, 162);
+}
+
+.MenuBar-SearchBox:hover{
+    background-color: white;
+    border-color:  rgb(134, 74, 0);
+}
+
+.MenuBar-Buttons-Container{
+    margin-left: auto;
+}
+
+.MenuBar-Buttons{
+    background-color: transparent;
+    text-decoration: none;
+    padding:5px;
+    border:4px solid black;
+    margin-left: 6px;
+    border-radius: 8px;
+    color:black;
+    transition: all 0.4s;
+
+    display:inline-flex;
+    justify-content: center;
+    width:70px;
+}
+
+.MenuBar-Buttons:hover{
+    background-color: white;
+    border-color: rgb(134, 74, 0);
+}
+
+@media(max-width:850px){
+    .MenuBar-Container{
+        display:grid;
+        height: 120px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 60px auto;
+        grid-template-areas: 
+        "A B"
+        "C C"
+        ;
+    }
+
+    .MenuBar-Text{
+        display: flex;
+        justify-content: start;
+        max-width: 200px;
+        grid-area: A;
+    }
+
+    .MenuBar-Buttons-Container{
+        display: flex;
+        justify-content: end;
+        grid-area:B;
+    }
+
+    .SearchBox-Container{
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        grid-area:C;
+    }
+
+}

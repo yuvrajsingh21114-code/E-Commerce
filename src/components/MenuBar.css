@@ -13,7 +13,7 @@
 
 .MenuBar-Text{
     margin-right: auto;
-    font-size: 30px;
+    font-size: 25px;
     text-decoration: none;
     color:black;
     transition: all 0.5s;
@@ -48,10 +48,17 @@
     border:4px solid black;
     margin-left: 6px;
     border-radius: 8px;
+    color:black;
+    transition: all 0.4s;
 
     display:inline-flex;
     justify-content: center;
     width:70px;
+}
+
+.MenuBar-SearchButton:hover{
+    background-color: white;
+    border-color: rgb(134, 74, 0);
 }
 
 .MenuBar-SearchBox::placeholder{
@@ -124,4 +131,47 @@
         grid-area:C;
     }
 
+}
+
+@media (max-width:430px){
+    body {
+    margin: 0;
+    }
+    .MenuBar-Container{
+        display:grid;
+        height: 120px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 60px auto;
+        grid-template-areas: 
+        "A B"
+        "C C"
+        ;
+    }
+
+    .MenuBar-Text{
+        display: flex;
+        justify-content: start;
+        font-size:20px;
+        max-width: 200px;
+        grid-area: A;
+    }
+
+    .MenuBar-Buttons-Container{
+        display: flex;
+        justify-content: end;
+        grid-area:B;
+        margin-right:0px;
+    }
+
+    .SearchBox-Container{
+        display: flex;
+        justify-content: center;
+        align-items: start;
+        grid-area:C;
+    }
+
+    .MenuBar-Buttons{
+        width:50px;
+
+    }
 }

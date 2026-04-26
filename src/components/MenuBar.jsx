@@ -7,7 +7,7 @@ export function MenuBar(){
             <Link to="/" className="MenuBar-Text">E-Commerce</Link>
             <div className="SearchBox-Container">
                 <input className="MenuBar-SearchBox" placeholder="Enter to Search"></input>
-                <Link className="MenuBar-Buttons">Search</Link>
+                <Link className="MenuBar-SearchButton">Search</Link>
             </div>
             
             <div className="MenuBar-Buttons-Container">

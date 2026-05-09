@@ -9,7 +9,7 @@ export function HomePage() {
         <>
             <MenuBar />
             <div className="Products-Container">
-                <Product name="Speaker" loc={img1} />
+                <Product name="Bluetooth speaker with Aux and Sub Woofer" loc={img1} />
                 <Product />
                 <Product />
                 <Product />

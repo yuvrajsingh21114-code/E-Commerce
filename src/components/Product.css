@@ -1,37 +1,60 @@
 .Product-Container{
-    border:3px solid black;
+    border:3px solid #FF0087;
     border-radius: 8px;
-    background-color: rgba(255, 241, 224, 0.452);
+    background-color: transparent;
 
     display:flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     padding: 12px 24px;
     flex-direction: column;
     transition: all 0.2s;
+    height: 350px;
 }
 
 .Product-Container:hover{
-    border:3px solid rgb(134, 74, 0);
-    background-color: transparent;
+    border:3px solid #FF0087;
+    background-color: #ffffff;
+}
+
+.Image-Container{
+    border:2px solid black;
+    border-radius: 8px ;
+    height: 200px;
+    width:170px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
 }
 
 .Product-Image{
-    max-width: 200px;
-    max-height: 180px;
+    margin: 0%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+  
 }
 
 .Product-Name{
-    border:2px solid black;
-    width:150px;
-    height:20px;
     text-align: center;
     text-decoration: none;
     color:black;
+    word-break: break-all;
 }
 
 .Product-Name:hover{
-    color:rgb(134, 74, 0);
+    color:#FF0087;
+}
+
+.Product-Name-Container{
+    display: flex;
+    height:80px ;
+    width: 170px ;
+    justify-content: center;
+    overflow:hidden;
 }
 
 .Product-Button{
@@ -40,14 +63,14 @@
     height:25px;
     justify-content: center;
     align-items: center;
-    border: 2px solid black;
-    background-color: transparent;
+    border: 2px solid #FF0087;
+    background-color: #ebfffe ;
     border-radius: 8px;
     transition: all 0.2s;
 }
 
 .Product-Button:hover{
-    border: 2px solid rgb(134, 74, 0);
+    border: 2px solid #FF0087;
     background-color: transparent;
     border-radius: 12px;
 }

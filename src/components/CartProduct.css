@@ -1,0 +1,17 @@
+.ProContainer{
+    border:2px solid red;
+    border-radius: 8px;
+    height:450px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.SingleProduct{
+    display:flex;
+    border:2px solid green;
+    height:200px;
+    margin:10px;
+
+    overflow: hidden;
+}

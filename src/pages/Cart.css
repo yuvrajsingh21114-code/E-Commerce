@@ -1,0 +1,17 @@
+.Orders-Container{
+    display: grid;
+    border:2px solid blue;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-rows: 530px;
+    justify-content: center;
+    align-items: center;
+    padding:10px;
+    gap:10px;
+}
+
+@media (max-width:850px) {
+    .Orders-Container{
+        grid-template-rows: 470px;
+    }
+    
+}

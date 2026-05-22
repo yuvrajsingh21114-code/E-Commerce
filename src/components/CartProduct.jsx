@@ -1,15 +1,14 @@
 import './CartProduct.css'
-import speaker from '../assets/speaker.png'
 import axios from 'axios'
 import { useEffect,useState } from 'react'
 
 export function CartProduct(){
-    const[cartProduct,setCartProduct]=useState([]);
+    const[cartProducts,setCartProducts]=useState([]);
 
     useEffect(()=>{
         async function fetchCartProducts(){
             const cartresponse=await axios.get('http://localhost:5000/api/cart');
-            setCartProduct(cartresponse.data);
+            setCartProducts(cartresponse.data);
         }
 
         fetchCartProducts();
@@ -19,35 +18,18 @@ export function CartProduct(){
     return(
         <div className="ProContainer">
             {
-                cartProduct.map((products)=>{
+                cartProducts.map((product)=>{
                     return(
-                        <div className="SingleProduct" key={products.id}>
-                            {products.name}
-                            {products.price}
+                        <div className="SingleProduct" key={product.id}>
+                            Name: {product.name} <br />
+                            Brand: {product.brand} <br />
+                            Price: {product.price} <br />
+                            Description: {product.description} <br />
+                            <img src={product.image}></img>
                         </div>
                     );
                 })
             }
-            <div className="SingleProduct">
-                Products
-                <img src={speaker}></img>
-            </div>
-            <div className="SingleProduct">
-                Products
-                <img src={speaker}></img>
-            </div>
-            <div className="SingleProduct">
-                Products
-                <img src={speaker}></img>
-            </div>
-            <div className="SingleProduct">
-                Products
-                <img src={speaker}></img>
-            </div>
-            <div className="SingleProduct">
-                Products
-                <img src={speaker}></img>
-            </div>
         </div>
     )
 }

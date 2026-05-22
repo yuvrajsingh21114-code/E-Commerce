@@ -28,7 +28,7 @@ export function HomePage() {
             <div className="Products-Container">
                 {products.map((product)=>{
                     return(
-                    <Product name={product.name} />
+                    <Product name={product.name} key={product.id} />
                     )
                 })}
             </div>            

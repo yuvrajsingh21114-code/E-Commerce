@@ -2,9 +2,22 @@
     border:2px solid blue;
     border-radius: 8px;
     height:300px;
-    width: 350px;
-    margin:auto;
-    
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+
+    display: flex;
+    justify-content: center;
+}
+
+.subcon{
+    display: flex;
+    border:2px solid green;
+    height:200px;
+    width:300px;
+    margin:10px;
+
+    overflow: hidden;
 }
 
 .order-button{
@@ -24,4 +37,10 @@
 .order-button:hover{
     background-color: white;
     border-color: #FF0087;
+}
+
+@media (max-width:850px){
+    .SumContainer{
+        width:100%;
+    }
 }

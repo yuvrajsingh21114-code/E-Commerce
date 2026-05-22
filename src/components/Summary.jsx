@@ -17,12 +17,14 @@ export function Summary(){
 
     return(
         <div className="SumContainer">
-            Summary
-            price:{summary.total}<br />
-            shipping fees:{summary.shippingcost}<br />
-            items:{summary.totalitems}<br />
-            subtotal:{summary.subtotal}<br />
-            <button className="order-button">Place Order</button>
+            <div className="subcon">
+                Summary
+                price:{summary.total}<br />
+                shipping fees:{summary.shippingcost}<br />
+                items:{summary.totalitems}<br />
+                subtotal:{summary.subtotal}<br />
+                <button className="order-button">Place Order</button>
+            </div>
         </div>
     )
 }

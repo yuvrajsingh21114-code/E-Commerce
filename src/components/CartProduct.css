@@ -15,3 +15,11 @@
 
     overflow: hidden;
 }
+
+@media (max-width:850px){
+    .ProContainer{
+        width:100%;
+        overflow-y: visible;
+        height:fit-content;
+    }
+}

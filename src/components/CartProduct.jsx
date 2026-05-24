@@ -21,11 +21,15 @@ export function CartProduct(){
                 cartProducts.map((product)=>{
                     return(
                         <div className="SingleProduct" key={product.id}>
-                            Name: {product.name} <br />
-                            Brand: {product.brand} <br />
-                            Price: {product.price} <br />
-                            Description: {product.description} <br />
-                            <img src={product.image}></img>
+                            <div className="cart-product-content">
+                                Name: {product.name} <br />
+                                Brand: {product.brand} <br />
+                                Price: {product.price} <br />
+                                Description: {product.description} <br />
+                            </div>
+                            <div className="cart-img-container">
+                                <img className="Cart-img" src={product.image}></img>
+                            </div>
                         </div>
                     );
                 })

@@ -21,7 +21,7 @@
     border:2px solid black;
     border-radius: 8px ;
     height: 200px;
-    width:170px;
+    width:200px;
     overflow: hidden;
 
     display: flex;
@@ -59,7 +59,7 @@
 
 .Product-Button{
     display:inline-flex;
-    width:150px;
+    width:200px;
     height:25px;
     justify-content: center;
     align-items: center;

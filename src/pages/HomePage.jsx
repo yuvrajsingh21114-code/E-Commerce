@@ -21,6 +21,7 @@ export function HomePage() {
         fetchProducts();
     },[]);
 
+
     return(
         <>  
             <MenuBar />

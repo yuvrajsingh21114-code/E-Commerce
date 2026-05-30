@@ -1,0 +1,37 @@
+:root{
+    --primary:#FF0087;
+    --hover:#d2f8f9;
+    --background:#ffffff;
+}
+
+.order-container{
+    display:flex;
+    padding:10px;
+    border:2px solid var(--primary);
+    border-radius: 8px;
+    height:200px;
+    margin:10px;
+
+    overflow: hidden;
+}
+
+.Cart-img{
+    margin: 0%;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.cart-img-container{
+    border:2px solid black;
+    border-radius: 8px ;
+    height: 180px;
+    width: 180px;
+    overflow: hidden;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0%;
+    margin-left: auto;
+}

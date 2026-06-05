@@ -19,6 +19,7 @@
 
 .Image-Container{
     border:2px solid black;
+    background-color: white;
     border-radius: 8px ;
     height: 200px;
     width:200px;
@@ -27,14 +28,14 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 0%;
+    padding: 2%;
 }
 
 .Product-Image{
     margin: 0%;
     height: 100%;
     width: 100%;
-    object-fit: cover;
+    object-fit: contain;
   
 }
 

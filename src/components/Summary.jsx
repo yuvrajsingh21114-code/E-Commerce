@@ -15,6 +15,26 @@ export function Summary(){
         fetchsummary();
     },[]);
 
+    const [OrderLoad,setOrderLoad]=useState(false);
+
+    async function PlaceOrder(){
+        try{
+            setOrderLoad(true);
+
+            const response= await axios.post('http://localhost:5000/api/summary',{
+                status: "add order"
+            });
+
+            console.log(response.data);
+        }
+        catch(err){
+            console.log(err);
+        }
+        finally{
+            setOrderLoad(false);
+        }
+    }
+
     return(
         <div className="SumContainer">
             <div className="subcon">
@@ -23,7 +43,7 @@ export function Summary(){
                 shipping fees:{summary.shippingcost}<br />
                 items:{summary.totalitems}<br />
                 subtotal:{summary.subtotal}<br />
-                <button className="order-button">Place Order</button>
+                <button className="order-button" onClick={PlaceOrder}>{OrderLoad ? "Placing your Order" : "Place Order"}</button>
             </div>
         </div>
     )

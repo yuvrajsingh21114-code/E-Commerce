@@ -3,7 +3,7 @@ import { useState } from 'react';
 import { Link } from 'react-router'
 import './Product.css'
 
-export function Product({name,loc,id,description}){
+export function Product({name,loc,id,description,cost}){
     const [loading,setLoading]= useState(false);
 
     async function AddCart(){
@@ -33,7 +33,8 @@ export function Product({name,loc,id,description}){
             </div>         
             <div className="Product-Name-Container">
                 <Link className="Product-Name">{name}</Link><br/>
-                <p>{description}</p>
+                <p>{description}</p><br />
+                <center>Price: ${cost/100}</center>
             </div>             
             <button className="Product-Button" disabled={loading} onClick={AddCart}>{loading ? "Adding..." : "Add to Cart"}</button>            
         </div>

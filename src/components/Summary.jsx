@@ -1,21 +1,10 @@
 import axios from 'axios';
-import { useState,useEffect } from 'react';
 import './Summary.css';
+import { useNavigate } from 'react-router';
+import {formatmoney} from '../utils/formatmoney'
 
-
-export function Summary(){
-    const [summary,setSummary]=useState([]);
-    
-    useEffect(()=>{
-        async function fetchsummary(){
-        const response=await axios.get('http://localhost:5000/api/summary');
-        setSummary(response.data);
-        }
-
-        fetchsummary();
-    },[]);
-
-    const [OrderLoad,setOrderLoad]=useState(false);
+export function Summary({summary,OrderLoad,setOrderLoad,fetchSummary,fetchCartProducts}){
+    const navigate=useNavigate();
 
     async function PlaceOrder(){
         try{
@@ -32,6 +21,9 @@ export function Summary(){
         }
         finally{
             setOrderLoad(false);
+            fetchSummary();
+            fetchCartProducts();
+            navigate('/orders');
         }
     }
 
@@ -39,11 +31,11 @@ export function Summary(){
         <div className="SumContainer">
             <div className="subcon">
                 Summary
-                price:{summary.total}<br />
-                shipping fees:{summary.shippingcost}<br />
+                price:{formatmoney(summary.total)}<br />
+                shipping fees:{formatmoney(summary.shippingcost)}<br />
                 items:{summary.totalitems}<br />
-                subtotal:{summary.subtotal}<br />
-                <button className="order-button" onClick={PlaceOrder}>{OrderLoad ? "Placing your Order" : "Place Order"}</button>
+                subtotal:{formatmoney(summary.subtotal)}<br />
+                <button className="order-button" disabled={OrderLoad} onClick={PlaceOrder}>{OrderLoad ? "Placing your Order" : "Place Order"}</button>
             </div>
         </div>
     )

@@ -29,7 +29,7 @@ export function HomePage() {
             <div className="Products-Container">
                 {products.map((product)=>{
                     return(
-                    <Product name={product.name} key={product.id} id={product.id} description={product.description} loc={product.image} />
+                    <Product name={product.name} key={product.id} id={product.id} description={product.description} loc={product.image} cost={product.price} />
                     )
                 })}
             </div>            

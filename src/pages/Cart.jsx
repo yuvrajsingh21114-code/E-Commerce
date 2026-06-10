@@ -1,17 +1,45 @@
 import { MenuBar } from '../components/MenuBar';
 import { CartProduct } from '../components/CartProduct';
 import { Summary } from '../components/Summary';
+import axios from 'axios'
+import { useEffect, useState } from 'react'
 import './Cart.css';
 
 export function Cart() {
-    return(
+    const [cartProducts, setCartProducts] = useState([]);
+    const [summary, setSummary] = useState([]);
+    const [OrderLoad, setOrderLoad] = useState(false);
+
+    const fetchCartProducts = async () => {
+        const cartresponse = await axios.get('http://localhost:5000/api/cart');
+        setCartProducts(cartresponse.data);
+    }
+
+
+    useEffect(() => {
+        fetchCartProducts();
+    }, []);
+
+    const fetchSummary = async () => {
+        const response = await axios.get('http://localhost:5000/api/summary');
+        setSummary(response.data);
+
+        if (response.data.total == 0) {
+            setOrderLoad(true);
+        }
+    }
+
+    useEffect(() => {
+        fetchSummary();
+    }, []);
+
+    return (
         <>
             <MenuBar />
-            <div className="Orders-Container">           
-                <CartProduct />
-                <Summary />
+            <div className="Orders-Container" >
+                <CartProduct cartProducts={cartProducts} />
+                <Summary orderLoar={OrderLoad} summary={summary} setOrderLoad={setOrderLoad} fetchSummary={fetchSummary} fetchCartProducts={fetchCartProducts} />
             </div>
-            
         </>
     );
 }

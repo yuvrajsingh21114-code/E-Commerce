@@ -30,11 +30,11 @@ export function Summary({summary,OrderLoad,setOrderLoad,fetchSummary,fetchCartPr
     return(
         <div className="SumContainer">
             <div className="subcon">
-                Summary
-                price:{formatmoney(summary.total)}<br />
-                shipping fees:{formatmoney(summary.shippingcost)}<br />
-                items:{summary.totalitems}<br />
-                subtotal:{formatmoney(summary.subtotal)}<br />
+                <center><b>Summary</b></center><br />
+                Price:{formatmoney(summary.total)}<br />
+                Total-Items: {summary.totalitems}<br />
+                Shipping fees:{formatmoney(summary.shippingcost)}<br />                
+                Subtotal:{formatmoney(summary.subtotal)}<br />
                 <button className="order-button" disabled={OrderLoad} onClick={PlaceOrder}>{OrderLoad ? "Placing your Order" : "Place Order"}</button>
             </div>
         </div>

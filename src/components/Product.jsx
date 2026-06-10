@@ -2,6 +2,7 @@ import axios from 'axios';
 import { useState } from 'react';
 import { Link } from 'react-router'
 import './Product.css'
+import {formatmoney} from '../utils/formatmoney'
 
 export function Product({name,loc,id,description,cost}){
     const [loading,setLoading]= useState(false);
@@ -34,7 +35,7 @@ export function Product({name,loc,id,description,cost}){
             <div className="Product-Name-Container">
                 <Link className="Product-Name">{name}</Link><br/>
                 <p>{description}</p><br />
-                <center>Price: ${cost/100}</center>
+                <center>Price: {formatmoney(cost)}</center>
             </div>             
             <button className="Product-Button" disabled={loading} onClick={AddCart}>{loading ? "Adding..." : "Add to Cart"}</button>            
         </div>

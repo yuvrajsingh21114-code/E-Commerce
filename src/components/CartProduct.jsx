@@ -1,4 +1,5 @@
 import './CartProduct.css'
+import {formatmoney} from '../utils/formatmoney'
 
 export function CartProduct({cartProducts}){
 
@@ -11,7 +12,9 @@ export function CartProduct({cartProducts}){
                             <div className="cart-product-content">
                                 Name: {product.name} <br />
                                 Brand: {product.brand} <br />
-                                Price: {product.price} <br />
+                                Category: {product.category} <br />
+                                Rating: {product.rating}/5 <br />
+                                Price: {formatmoney(product.price)} <br />
                                 Description: {product.description} <br />
                             </div>
                             <div className="cart-img-container">

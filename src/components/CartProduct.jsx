@@ -42,9 +42,9 @@ export function CartProduct({ product,fetchSummary,type}) {
                             <div className="cart-shipping-container">
                                 <div className="shipping-heading">Select shipping type: </div> <br />
                                 <form className="Shipping-form" name="Shipping-form">
-                                    <label><input type="radio" value="3" name="option 1" onChange={ShippingChange} />2-day Shipping($100)</label><br />
-                                    <label><input type="radio" value="2" name="option 1" onChange={ShippingChange} />Fast Shipping($60)</label><br />
-                                    <label><input type="radio" value="1" name="option 1" onChange={ShippingChange} defaultChecked />Standard shipping($40)</label>
+                                    <label><input type="radio" value="3" name="option 1" onChange={ShippingChange} checked={product.delivery===3} />2-day Shipping($100)</label><br />
+                                    <label><input type="radio" value="2" name="option 1" onChange={ShippingChange} checked={product.delivery===2} />Fast Shipping($60)</label><br />
+                                    <label><input type="radio" value="1" name="option 1" onChange={ShippingChange} checked={product.delivery===1} />Standard shipping($40)</label>
                                 </form>
                             </div>
 

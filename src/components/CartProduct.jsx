@@ -2,7 +2,7 @@ import axios from 'axios';
 import './CartProduct.css'
 import { formatmoney } from '../utils/formatmoney'
 
-export function CartProduct({ product,fetchSummary,type}) {
+export function CartProduct({ product,fetchSummary,fetchCartProducts,type}) {
 
     async function ShippingChange(event){
         try{
@@ -18,6 +18,7 @@ export function CartProduct({ product,fetchSummary,type}) {
         }
         finally{
             fetchSummary();
+            fetchCartProducts();
         }
     }
 

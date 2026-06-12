@@ -41,7 +41,7 @@ export function Cart() {
                     {
                         cartProducts.length > 0 ? (cartProducts.map((product) => {
                             return(
-                                <CartProduct key={product.id} product={product} fetchSummary={fetchSummary} type="1"/>
+                                <CartProduct key={product.id} product={product} fetchSummary={fetchSummary} type="1" fetchCartProducts={fetchCartProducts} />
                             );
                         })): <CartProduct type="0"/>
                     }

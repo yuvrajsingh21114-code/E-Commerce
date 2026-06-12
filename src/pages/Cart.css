@@ -7,6 +7,14 @@
     padding:10px;
     gap:20px;
 }
+.ProContainer{
+    border:2px solid var(--primary);
+    border-radius: 8px;
+    height:450px;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
 
 @media (max-width:850px) {
     .Orders-Container{

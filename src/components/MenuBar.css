@@ -20,8 +20,7 @@
 }
 
 .MenuBar-Text:hover{
-    transform: scale(1.2);
-    color:#FF0087;
+    color:#000000;
     transition: all 5s;
 }
 
@@ -97,6 +96,19 @@
 .MenuBar-Buttons:hover{
     background-color: white;
     border-color: #FF0087;
+}
+
+.Search-menu-box{
+    border:2px solid black;
+    display:none;
+    height:200px;
+    width:100px;
+    z-index: 10;
+
+}
+
+.MenuBar-SearchBox:hover .Search-menu-box{
+    display:flex;
 }
 
 @media(max-width:850px){

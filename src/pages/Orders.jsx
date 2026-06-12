@@ -28,7 +28,7 @@ return (
         <div className="Orders-container">
             {orders.map((order) => {
                 return (
-                    <OrderProduct name={order.name} key={order.id} loc={order.image} />
+                    <OrderProduct orders={order} />
                 )
             })} 
         </div>

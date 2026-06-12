@@ -37,7 +37,16 @@ export function Cart() {
         <>
             <MenuBar />
             <div className="Orders-Container" >
-                <CartProduct cartProducts={cartProducts} />
+                <div className="ProContainer">
+                    {
+                        cartProducts.length > 0 ? (cartProducts.map((product) => {
+                            return(
+                                <CartProduct key={product.id} product={product} fetchSummary={fetchSummary} type="1"/>
+                            );
+                        })): <CartProduct type="0"/>
+                    }
+                </div>
+                
                 <Summary orderLoar={OrderLoad} summary={summary} setOrderLoad={setOrderLoad} fetchSummary={fetchSummary} fetchCartProducts={fetchCartProducts} />
             </div>
         </>

@@ -1,11 +1,20 @@
+:root {
+    --primary: #FF0087;
+    --hover: #d2f8f9;
+    --background: #ffffff;
+}
+
 .MenuBar-Container{
     display:flex;  
     flex-wrap: wrap;
+    position: sticky;
+    top:0;
     gap:10px;
     justify-content: center; 
     align-items: center;
-    background-color: #d2f8f9;
-    border-bottom:2px solid #FF0087;
+    background-color: #d2f8f994;
+    backdrop-filter: blur(6px);
+    border-bottom:2px solid var(--primary);
     padding-left:4vh;
     padding-right:4vh;
     height:60px;
@@ -15,7 +24,7 @@
     margin-right: auto;
     font-size: 25px;
     text-decoration: none;
-    color:#FF0087;
+    color:var(--primary);
     transition: all 0.5s;
 }
 
@@ -30,9 +39,10 @@
 
 .MenuBar-SearchBox{
     background-color: transparent;
+    position: relative;
     text-align: center;
     color:black;
-    border:4px solid #FF0087;
+    border:4px solid var(--primary);
     border-radius: 8px;
     width: 100vh;
     max-width: 300px;
@@ -44,7 +54,7 @@
     background-color: transparent;
     text-decoration: none;
     padding:5px;
-    border:4px solid #FF0087;
+    border:4px solid var(--primary);
     margin-left: 6px;
     border-radius: 8px;
     color:black;
@@ -57,7 +67,7 @@
 
 .MenuBar-SearchButton:hover{
     background-color: white;
-    border-color: #FF0087;
+    border-color: var(--primary);
 }
 
 .MenuBar-SearchBox::placeholder{
@@ -99,16 +109,39 @@
 }
 
 .Search-menu-box{
-    border:2px solid black;
+    border:2px solid var(--primary);
+    background-color: var(--background);
     display:none;
+    position: absolute;
+    
     height:200px;
-    width:100px;
+    width:60vh;
     z-index: 10;
+    border-radius: 8px;
+    margin-top: 20px;
 
+    grid-template-columns: 1fr;
+    justify-content: center;
+    overflow-y: scroll;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+    padding: 1%;
 }
 
-.MenuBar-SearchBox:hover .Search-menu-box{
-    display:flex;
+
+
+.Search-menu-suggestion{
+    display: flex;
+    margin: auto;
+    justify-content: center;
+    padding: 2%;
+    align-items: center;
+    width: 90%;
+    border-radius: 8px;
+}
+
+.Search-menu-suggestion:hover{
+    background-color: #ff008813;
 }
 
 @media(max-width:850px){
@@ -148,6 +181,9 @@
     max-width: 600px;
     }
 
+    .Search-menu-box{
+        margin-top: 40px;
+    }
 }
 
 @media (max-width:430px){
@@ -190,5 +226,9 @@
     .MenuBar-Buttons{
         width:50px;
 
+    }
+
+    .Search-menu-box{
+        width:80%;
     }
 }

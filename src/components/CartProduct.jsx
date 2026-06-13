@@ -9,7 +9,7 @@ export function CartProduct({ product,fetchSummary,fetchCartProducts,type}) {
             const shippingresponce= await axios.put('http://localhost:5000/api/Cart',{
                 id: product.id,
                 delivery: event.target.value,
-            })
+            });
 
             console.log(shippingresponce.data);
         }

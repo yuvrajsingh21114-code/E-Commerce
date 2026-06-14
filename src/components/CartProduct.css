@@ -11,6 +11,10 @@
     object-fit: contain;
 }
 
+input[type="radio"]{
+    accent-color: var(--primary);
+}
+
 .cart-img-container {
     border: 2px solid black;
     background-color: white;

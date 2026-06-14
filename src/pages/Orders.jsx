@@ -28,7 +28,7 @@ return (
         <div className="Orders-container">
             {orders.map((order) => {
                 return (
-                    <OrderProduct orders={order} />
+                    <OrderProduct orders={order} key={crypto.randomUUID()} />
                 )
             })} 
         </div>

@@ -4,8 +4,9 @@ import { useState } from 'react';
 
 export function MenuBar() {
     const[show,setShow]=useState(false);
+    const[suggestion,setSuggestion]=useState('');
     function focus(value){
-        console.log(value);
+        setSuggestion(value);
     }
 
     return (
@@ -14,22 +15,24 @@ export function MenuBar() {
                 <Link to="/" className="MenuBar-Text">E-Commerce</Link>
                 <div className="SearchBox-Container">
                     <input className="MenuBar-SearchBox" 
+                        value={suggestion}
                         placeholder="Enter to Search" 
+                        onChange={()=>{console.log('');}}
                         onFocus={()=>{setShow('grid')}} 
                         onBlur={()=>{setTimeout(() => {
                             setShow(false)
-                        }, 500);}}></input>
+                        }, 300);}}></input>
                     <div className="Search-menu-box" style={{display:show}}>
-                        <div className="Search-menu-suggestion"  onClick={()=>{focus("s1")}}><label>Suggestion1</label></div>
-                        <div className="Search-menu-suggestion"  onClick={()=>{focus("s1")}}><label>Suggestion1</label></div>
-                        <div className="Search-menu-suggestion"  onClick={()=>{focus("s1")}}><label>Suggestion1</label></div>
-                        <div className="Search-menu-suggestion"  onClick={()=>{focus("s1")}}><label>Suggestion1</label></div>
-                        <div className="Search-menu-suggestion"  onClick={()=>{focus("s1")}}><label>Suggestion1</label></div>
-                        <div className="Search-menu-suggestion"  onClick={()=>{focus("s1")}}><label>Suggestion1</label></div>
-                        <div className="Search-menu-suggestion"  onClick={()=>{focus("s1")}}><label>Suggestion1</label></div>
-                        <div className="Search-menu-suggestion"  onClick={()=>{focus("s1")}}><label>Suggestion1</label></div>
+                        <div className="Search-menu-suggestion"  onClick={()=>{focus("Shoes")}}><label>Shoes</label></div>
+                        <div className="Search-menu-suggestion"  onClick={()=>{focus("TV")}}><label>TV</label></div>
+                        <div className="Search-menu-suggestion"  onClick={()=>{focus("Speaker")}}><label>Speaker</label></div>
+                        <div className="Search-menu-suggestion"  onClick={()=>{focus("bag")}}><label>bag</label></div>
+                        <div className="Search-menu-suggestion"  onClick={()=>{focus("Coffee")}}><label>Coffee</label></div>
+                        <div className="Search-menu-suggestion"  onClick={()=>{focus("Pen")}}><label>Pen</label></div>
+                        <div className="Search-menu-suggestion"  onClick={()=>{focus("Phone")}}><label>Phone</label></div>
+                        <div className="Search-menu-suggestion"  onClick={()=>{focus("Chair")}}><label>Chair</label></div>
                     </div>
-                    <Link className="MenuBar-SearchButton">Search</Link>
+                    <Link to="/" className="MenuBar-SearchButton" onClick={()=>{setSuggestion('')}}>Search</Link>
                 </div>
 
                 <div className="MenuBar-Buttons-Container">
